@@ -4,22 +4,19 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>GeoAR.js demo</title>
-    <script src='https://aframe.io/releases/0.9.2/aframe.min.js'></script>
-    <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script>
-        THREEx.ArToolkitContext.baseURL = 'https://github.com/jeromeetienne/AR.js/tree/master/three.js'
-    </script>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src='../../../build/aframe-ar-nft.js'></script>
+
 </head>
 
 <body style='margin: 0; overflow: hidden;'>
     <a-scene
         vr-mode-ui="enabled: false"
 		embedded
-        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-        
+		arjs='sourceType: webcam; debugUIEnabled: false;'>
+
+        <a-box material="color: red;" scale="15 15 15" position="0 0 0" gps-entity-place="latitude: 41.890339; longitude: 12.492586;"></a-box>
         <a-camera gps-camera="simulateLatitude: 41.890890; simulateLongitude: 12.489357;" rotation-reader>
 		</a-camera>
-        <a-entity gltf-model="./assets/magnemite/scene.gltf" position="0 30 0" rotation="0 180 0" scale="0.5 0.5 0.5" gps-entity-place="longitude: 12.489357,; latitude: 41.890890;" animation-mixer/>
 	</a-scene>
-</body>	
+</body>
